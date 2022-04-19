@@ -1,0 +1,540 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Bebas+Neue&family=Oswald:wght@200;300;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Bebas+Neue&family=Neucha&family=Oswald:wght@200;300;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Bebas+Neue&family=Neucha&family=Oswald:wght@200;300;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Source+Code+Pro&family=Ubuntu:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Bebas+Neue&family=Neucha&family=Oswald:wght@200;300;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Source+Code+Pro:ital,wght@0,400;1,400;1,800&family=Ubuntu:wght@500&display=swap');
+:root{
+    --background-color:#2B2D42;
+    --primary:#F15064;
+    --light:#EEEEEE;
+    --dark:#212121;
+}
+
+
+*,*::after,*::before{
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    background: var(--background-color);
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 300;
+    
+}
+
+
+
+.logo {
+
+    font-family: 'Ubuntu', sans-serif;
+    color: #F15064;
+    border: solid  2px var(--light) ;
+    padding: 5px;
+    font-size: 3rem;
+    
+    
+    
+
+    
+}
+.logo-text{
+    position: absolute;
+    top: 0;
+    margin-bottom: 25px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.logo span{
+    font-family: 'Bebas Neue', cursive;
+    color: var(--light);
+    background: #F15064;
+    margin-right: 5px;
+    margin-top: 1px;
+    padding: 2px;
+    font-size:clamp(3rem,2rem+1vw,1rem);
+}
+.container{
+    max-width: 1280px;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.hamburger{
+    display: block;
+    position: relative;
+    z-index: 1;
+
+    user-select: none;
+    border: none;
+    outline: none;
+    background: none;
+    appearance: none;
+
+}
+.hamburger span{
+    display: block;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+    cursor: pointer;
+
+    background: white;
+    border-radius: 1;
+    z-index: 1;
+    margin-left: 30px;
+
+    transform-origin: 0 0;
+    transition: 0.4s;
+}
+.hamburger:hover span:nth-child(2){
+    transform: translateX(10px);
+    background: #F15064;
+}
+.hamburger.is-active span:nth-child(1){
+    transform: translate(0px , -2px) rotate(45deg);
+}
+.hamburger.hamburger.is-active span:nth-child(2){
+    transform: translateX(10px);
+    opacity: 0;
+}
+.hamburger.hamburger.is-active span:nth-child(3){
+    transform:  translate(-3px,3px) rotate(-45deg);
+}
+.hamburger.hamburger.is-active:hover span{
+    background-color: #F15064;
+}
+nav{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 999;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(2rem);
+    padding: 16px 32px;
+    border-bottom: dashed 1px #F15064;
+    max-height: 15%;
+}
+
+
+.menue{
+    display: none;
+    flex: 1 1 0%;
+    justify-content: flex-end;
+    margin: 0 -16px;
+
+}
+.menue a {
+    color: white;
+    font-family: 'Ubuntu', sans-serif;
+    text-decoration: none;
+    margin: 0 16px;
+    font-size: larger;
+    font-weight: bold;
+    transition: 0.4s;
+    padding: 8px 16px;
+    border-radius: 99px;
+
+}
+.mobile-menue{
+    display: none;
+}
+.mobile-menue.is-active {
+    display: block;
+    position: absolute;
+    right: 30px;
+    height: 200px;
+    width: 200px;
+    background: white;
+    border-radius: 0.1rem;
+
+}
+.mobile-menue.is-active li{
+    list-style: none;
+    margin: 20px;
+    align-items: center;
+}
+.mobile-menue.is-active  a{
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--primary);
+    
+}
+
+.menue a.active , .menue a:hover{
+    background: #F15064;
+    
+}
+.member{
+    color: white;
+    margin-left : 200px;
+    margin-top: 0PX;
+    font-size: larger;
+    font-family: 'Bebas Neue', cursive;
+    padding: 1.5rem;
+    background: #F15064;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: ease-in-out 0.5s;
+
+}
+
+.container-hero{
+    display: flex;
+    flex-wrap: wrap-reverse;
+    flex-direction: row-reverse;
+}
+.img-hero img{
+    flex-wrap: wrap;
+    flex: end;
+   margin-top: 70px;
+   
+    max-width: 100%;
+    height: auto;
+      
+}
+
+
+
+
+
+.main{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+   
+}
+.hero-txt1{
+    color: white;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 50px;
+    font-weight: 800;
+    box-shadow: inset 0 0 0 0 #F15064;
+    
+  color: #F15064;
+  margin-top: 200px;
+  padding: 0 .25rem;
+  transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+
+
+}
+
+
+.hero-txt1 span:hover{
+    box-shadow: inset 100px 0 0 0 #F15064;
+    color: white;
+}
+.hero-txt1 span{
+    font-family: 'Neucha', cursive;
+    font-weight: lighter;
+    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+    cursor: pointer;
+}
+
+h2{
+    color: white;
+}
+h2 img{
+    height: 40px;
+    transition: ease 0.4s;
+    cursor: pointer;
+}
+h2 img:hover{
+    height: 45px;
+    
+}
+
+h2 span{
+    line-height: 5ch;
+    font-family: 'Bebas Neue', cursive;
+    color: #F15064;
+}
+
+
+
+
+
+.member:hover{
+    background: white;
+    color: var(--primary);
+}
+
+@media screen and (min-width: 1500px) {
+    .hamburger{
+        display: none;
+    }
+    .menue{
+        display: flex;
+    }
+    
+
+    
+    @media  (max-width:1000px) {
+        .hamburger{
+            display: block;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .main{
+            margin-right: 1000px;
+        }
+
+        .container-hero{
+            flex-wrap: nowrap;
+        }
+    }
+}
+
+@media (max-width:1200px){
+    .logo{
+        font-size: 2rem;
+    }
+    .hero-txt1{
+        font-size: 30px;
+    }
+    
+
+}
+
+@media (min-width:1000px){
+    .container-hero{
+        flex-wrap: nowrap;
+    }
+}
+
+
+
+@media (max-width:1000px){
+    .logo{
+        font-size: 1.5rem;
+    }
+    .hero-txt1{
+        line-height: 3ch;
+        font-size: 20px;
+    }
+    .h2 {
+        font-size:20px;
+    }
+    .main{
+        text-align: center;
+    }
+    
+}
+
+
+.coming h1 {
+    font-size: 50px;
+    font-weight: 1000;
+    color: #EEEEEE;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid #F15064; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation: 
+      typing 3.5s steps(40, end),
+      blink-caret .75s step-end infinite;
+  }
+  
+  /* The typing effect */
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #F15064; }
+  }
+
+  .give{
+      color: #F15064;
+  }
+
+ @media screen and (max-width:1000px) {
+     .coming h1{
+         font-size: 30px;
+     }
+ }
+
+ @media (max-width:950px){
+     
+     h1{
+         font-size: 30px;
+     }
+     h2{
+         font-size: 25px;
+     }
+     .img-hero{
+         height: 100%;
+         width: fit-content;
+     }
+     body{
+         display: flex;
+         justify-content: center;
+         align-items: center;
+     }
+
+ }
+ @media (max-width:300px){
+     h1{
+         font-size: 20px;
+     }
+     h2{
+         font-size: 15px;
+     }
+ }
+
+ .cta{
+     display: flex;
+     flex-direction: row;
+     justify-content: center;
+     align-items: center;
+     flex-wrap: wrap;
+ }
+ /* .give{
+     margin: 10px;
+     text-decoration: none;
+     background: rgba(241,80,100,0.9);
+     color: #EEEEEE;
+     padding: 10px;
+     border-radius: 5px;
+ } */
+ .give {
+     margin: 15px;
+     padding: 10px;
+     text-decoration: none;
+     font-weight: 500;
+     color: #F15064;
+
+   
+    transition: all 0.3s;
+    position: relative;
+  }
+  .give span {
+    transition: all 0.3s;
+  }
+  .give::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+    transition: all 0.3s;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-top-color: rgba(255,255,255,0.5);
+    border-bottom-color: rgba(255,255,255,0.5);
+    transform: scale(0.1, 1);
+  }
+  .give:hover span {
+    letter-spacing: 2px;
+  }
+  .give:hover::before {
+    opacity: 1; 
+    transform: scale(1, 1); 
+  }
+  .give::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    transition: all 0.3s;
+    background-color: rgba(255,255,255,0.1);
+  }
+  .give:hover::after {
+    opacity: 0; 
+    transform: scale(0.1, 1);
+  }
+
+  .DEV {
+    padding: 10px;
+    color: #F15064;
+    margin: 15px;
+    transition: all 0.3s;
+    position: relative;
+  }
+
+  .DEV span {
+    transition: all 0.3s;
+  }
+  .DEV::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+    transition: all 0.3s;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-top-color: rgba(255,255,255,0.5);
+    border-bottom-color: rgba(255,255,255,0.5);
+    transform: scale(0.1, 1);
+  }
+  .DEV:hover span {
+    letter-spacing: 2px;
+  }
+  .DEV:hover::before {
+    opacity: 1; 
+    transform: scale(1, 1); 
+  }
+  .DEV::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    transition: all 0.3s;
+    background-color: rgba(255,255,255,0.1);
+  }
+  .DEV:hover::after {
+    opacity: 0; 
+    transform: scale(0.1, 1);
+  }
+
+ 
+ .cssanimation, .cssanimation span {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+.cssanimation span { display: inline-block }
+.fadeInBottom { animation-name: fadeInBottom }
+
+@keyframes fadeInBottom {
+    from {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    to { opacity: 1 }
+}
+.banner{
+    overflow: hidden;
+}
